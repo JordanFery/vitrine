@@ -1,4 +1,4 @@
-import HomeBody from "../components/homebody";
+import HomeBody from "./components/homebody";
 
 
 
