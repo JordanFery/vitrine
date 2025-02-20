@@ -74,7 +74,7 @@ export default function Contact() {
             )
             setIsFormSubmitted(true) // Mise à jour de l'état pour afficher FormSend
             setTimeout(() => {
-                window.location.replace("home")
+                window.location.replace("")
             }, 4000)
             console.log('Email envoyé avec succès')
         } catch (error) {

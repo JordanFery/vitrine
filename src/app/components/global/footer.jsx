@@ -23,10 +23,10 @@ export default function Footer() {
                 </div>
                 <div className='flex flex-col pt-12 lg:pt-0'>
                     <h3 className='mb-10 text-button'>Menu</h3>
-                    <a href="/home" className='mt-2'>Accueil</a>
+                    <a href="/" className='mt-2'>Accueil</a>
                     <a href="/services" className='mt-3'>Services</a>
-                    <a href="/home#ancre" className='mt-3'>Tarifs</a>
-                    <a href="/home#qsn" className='mt-3'>Qui sommes-nous ?</a>
+                    <a href="/#ancre" className='mt-3'>Tarifs</a>
+                    <a href="/#qsn" className='mt-3'>Qui sommes-nous ?</a>
                 </div>
                 <div className='flex flex-col px-2 sm:px-0'>
                     <h3 className='pb-10 flex  text-button pt-12 lg:pt-0'>Contactez-nous </h3>
