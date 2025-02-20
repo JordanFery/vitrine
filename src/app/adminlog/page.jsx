@@ -17,7 +17,7 @@ export default function loginPage() {
         if (result.error) {
             setError("Login ou mot de passe incorrect");
         } else {
-            window.location.href = "/home";
+            window.location.href = "/";
         }
     };
     return (

@@ -12,13 +12,13 @@ export default function Header() {
 
     return (
         <header className="flex flex-row justify-between items-center h-24 bg-maincolor text-white pt-8  h-12">
-            <a href="/home">
+            <a href="/">
                 <h1 className=" mx-6">TECH REPAIR</h1>
             </a>
             <nav>
 
                 <ul className="flex flex-row gap-20 mx-8 hidden lg:flex">
-                    <li><Link href="/home">Accueil</Link></li>
+                    <li><Link href="/">Accueil</Link></li>
                     <li><Link href="/services">Services</Link></li>
                     {/* <li><Link href="/services">Tarifs</Link></li> */}
                     <li><Link href="/contact">Contact</Link></li>
