@@ -47,7 +47,7 @@ export default function Footer() {
                     </div>
                 </div>
             </section>
-            <p className='text-center py-8'>© 2025 Tech Repair - Tous droits réservés.</p>
+            <p className='text-center px-12 sm:px-0 py-8'>© 2025 Tech Repair - Tous droits réservés.</p>
         </footer>
 
 

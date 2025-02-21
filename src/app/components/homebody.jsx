@@ -54,10 +54,10 @@ export default function HomeBody() {
             <section className="pb-16 px-8">
                 <h2 className="text-center text-maincolor text-3xl font-bold py-16">Nos Services</h2>
                 <div className="flex flex-row justify-center gap-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 ">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
                         {Array.isArray(cards) && cards.length > 0 ? (
                             cards.slice(0, 3).map((card) => (
-                                <div className="w-full px-4 " key={card.id}>
+                                <div className="w-full px-4" key={card.id}>
                                     <CardDisplay card={card} setCards={setCards} />
                                 </div>
                             ))
