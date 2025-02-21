@@ -36,7 +36,7 @@ export function Nav() {
                 className={`absolute  -right-4 bg-maincolor p-4 rounded-lg shadow-lg transition-all duration-300 
                     ${isOpen ? 'block' : 'hidden'} lg:hidden`}
             >
-                <a href="home" className="block text-white py-2 px-4 hover:text-buttonHover">
+                <a href="/" className="block text-white py-2 px-4 hover:text-buttonHover">
                     Accueil
                 </a>
                 <a href="services" className="block text-white py-2 px-4 hover:text-buttonHover">
