@@ -72,7 +72,7 @@ export function CardDisplay({ card, setCards }) {
     };
 
     return (
-        <section className="py-12 flex justify-center">
+        <section className="py-6 sm:py-12 flex justify-center">
             <Card className="h-[400px] text-justify flex flex-col justify-center  border-maincolor border">
                 <Image src={card.image}
                     className="w-16 h-16 mx-auto mt-8 object-cover"
