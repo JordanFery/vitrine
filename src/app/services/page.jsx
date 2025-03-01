@@ -10,7 +10,6 @@ export default function Services() {
     const { data: session } = useSession();
     const [cards, setCards] = useState([]);
 
-    // Récupérer les cartes depuis l'API
     useEffect(() => {
         const fetchCards = async () => {
             try {
@@ -22,16 +21,14 @@ export default function Services() {
         };
 
         fetchCards();
-    }, []); // Lancer l'effet une seule fois au montage
+    }, []);
 
     return (
         <>
-            {/* Si l'utilisateur est admin, afficher le formulaire pour ajouter des cartes */}
             {session?.user.role === "admin" && (
                 <CardWithForm cards={cards} setCards={setCards} />
             )}
 
-            {/* Affichage des cartes (toujours visible, même pour les visiteurs) */}
 
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 ">
                 {Array.isArray(cards) && cards.length > 0 ? (

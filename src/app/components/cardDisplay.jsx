@@ -10,8 +10,6 @@ import {
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
 
 export function CardDisplay({ card, setCards }) {
     const { data: session } = useSession();
@@ -56,7 +54,6 @@ export function CardDisplay({ card, setCards }) {
     };
     const handleDelete = async () => {
         setIsDelete(true);
-        console.log("Suppression de la carte", card.id);
 
 
         const response = await fetch(`/api/cards?id=${card.id}`, {
@@ -64,7 +61,6 @@ export function CardDisplay({ card, setCards }) {
         });
         if (response.ok) {
             setCards((prevCards) => prevCards.filter((c) => c.id !== card.id));
-            console.log("✅ Carte supprimée avec succès !");
         } else {
             console.error("❌ Erreur lors de la suppression");
         }

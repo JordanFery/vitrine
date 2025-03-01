@@ -14,31 +14,25 @@ export const authOptions = {
                 password: { label: "Password", type: "password" },
             },
             async authorize(credentials) {
-                console.log(credentials);
-                // Récupérer l'utilisateur en base de données
                 const user = await prisma.user.findUnique({
                     where: { email: credentials.email },
                 });
 
                 if (!user) {
-                    // Retourner null plutôt que de lancer une exception pour que NextAuth gère l'erreur
                     return null;
                 }
 
-                // Vérifier le mot de passe haché
                 const isValidPassword = await bcrypt.compare(credentials.password, user.password);
 
                 if (!isValidPassword) {
-                    // Retourner null plutôt que de lancer une exception
                     return null;
                 }
 
-                // Si les informations sont valides, retourner l'utilisateur avec les informations nécessaires
                 return {
                     id: user.id,
                     name: user.name,
                     email: user.email,
-                    role: user.role, // Ajout du rôle
+                    role: user.role,
                 };
             },
         }),
@@ -58,9 +52,9 @@ export const authOptions = {
         },
     },
     pages: {
-        signIn: "/adminpage", // Page de connexion personnalisée
+        signIn: "/adminpage",
     },
-    secret: process.env.NEXTAUTH_SECRET, // Assurez-vous que cette variable est bien définie dans votre .env
+    secret: process.env.NEXTAUTH_SECRET,
 };
 
 const handler = NextAuth(authOptions);

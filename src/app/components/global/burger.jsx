@@ -31,7 +31,6 @@ export function Nav() {
                 ></span>
             </button>
 
-            {/* Menu de liens */}
             <div
                 className={`absolute  -right-4 bg-maincolor p-4 rounded-lg shadow-lg transition-all duration-300 
                     ${isOpen ? 'block' : 'hidden'} lg:hidden`}

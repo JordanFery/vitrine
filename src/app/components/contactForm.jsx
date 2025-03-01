@@ -72,11 +72,10 @@ export default function Contact() {
                 templateParams,
                 process.env.NEXT_PUBLIC_EMAILJS_KEY
             )
-            setIsFormSubmitted(true) // Mise à jour de l'état pour afficher FormSend
+            setIsFormSubmitted(true)
             setTimeout(() => {
                 window.location.replace("")
             }, 4000)
-            console.log('Email envoyé avec succès')
         } catch (error) {
             console.error("Erreur lors de l'envoi de l'email", error)
             setSubmitError("Échec de l'envoi de l'email. Veuillez réessayer.")

@@ -11,8 +11,7 @@ export async function POST(req, res) {
             console.error("❌ `req.body` est null ou undefined");
             return new Response(JSON.stringify({ error: "Requête invalide" }), { status: 400 });
         }
-        const body = await req.json(); // Lire le JSON envoyé
-        console.log("📩 Données reçues :", body); // Debug
+        const body = await req.json();
 
 
         if (!body || !body.title || !body.description || !body.image) {
@@ -34,7 +33,6 @@ export async function POST(req, res) {
         return NextResponse.json({ error: "Erreur serveur, vérifiez la console." }, { status: 500 });
     }
 }
-// GET : Récupérer toutes les cartes
 export async function GET() {
     try {
         const cards = await prisma.card.findMany();
@@ -54,7 +52,6 @@ export async function DELETE(req) {
             return NextResponse.json({ error: "ID requis" }, { status: 400 });
         }
 
-        // Vérifier si la carte existe
         const existingCard = await prisma.card.findUnique({
             where: { id },
         });
@@ -63,7 +60,6 @@ export async function DELETE(req) {
             return NextResponse.json({ error: "Carte non trouvée" }, { status: 404 });
         }
 
-        // Supprimer la carte
         await prisma.card.delete({
             where: { id },
         });
